@@ -4,7 +4,6 @@ jobs:
  Test-Job:
    runs-on:
     - codebuild-Case175928201000066GitHubActionsRunner-${{ github.run_id }}-${{ github.run_attempt }}
- your_github_secrets_environment
     steps:
       - uses: actions/checkout@v3
       - name: Run local Docker container action
