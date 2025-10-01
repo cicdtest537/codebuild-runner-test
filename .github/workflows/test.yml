@@ -6,7 +6,7 @@ jobs:
       - codebuild-Case175928201000066GitHubActionsRunner-${{ github.run_id }}-${{ github.run_attempt }}
     steps:
       - uses: actions/checkout@v3
-      - name: Login to ECR
+      - name: Login to ECR 
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v2
       - name: Run local Docker container action
