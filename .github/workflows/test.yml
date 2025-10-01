@@ -8,7 +8,7 @@ jobs:
       matrix:
         repeat: [1, 2, 3, 4, 5]  # 5回繰り返し 
     steps:
-      - name: Pull ECR Public image to test rate limit
+      - name: test
         run: |
           docker pull public.ecr.aws/docker/library/alpine:3.18
           echo "Pulled image count ${{ matrix.repeat }}"
