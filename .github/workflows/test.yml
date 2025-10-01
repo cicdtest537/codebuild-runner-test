@@ -9,5 +9,5 @@ jobs:
       - name: Login to ECR 
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v2
-      - name: Run local Docker container action
+      - name: Run local Docker container action　
         uses: ./
