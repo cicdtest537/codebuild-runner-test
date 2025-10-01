@@ -1,0 +1,7 @@
+name: "Hello Docker Action"
+description: "A simple Docker container action using ECR Public base image"
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - "GitHub Actions"
