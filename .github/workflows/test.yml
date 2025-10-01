@@ -3,7 +3,7 @@ on: [push]
 jobs:
   Hello-World-Job:
     runs-on:
-      - codebuild-testGitHubActionsRunner-${{ github.run_id }}-${{ github.run_attempt }}
+      - codebuild-Case175928201000066GitHubActionsRunner-${{ github.run_id }}-${{ github.run_attempt }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
