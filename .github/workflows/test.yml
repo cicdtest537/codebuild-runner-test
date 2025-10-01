@@ -6,7 +6,7 @@ jobs:
       - codebuild-Case175928201000066GitHubActionsRunner-${{ github.run_id }}-${{ github.run_attempt }}
     strategy:
       matrix:
-        repeat: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10,11,12,13,14,15]  # 15回繰り返し
+        repeat: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10,11,12,13,14,15]  # 15回繰り返し 
     steps:
       - name: Pull ECR Public image to test rate limit
         run: |
