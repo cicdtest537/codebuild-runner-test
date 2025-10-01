@@ -1,4 +1,4 @@
-name: Scan artifact with Amazon Inspector
+name: test container action
 on: [push]
 jobs:
  daily_job:
@@ -8,4 +8,4 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Run local Docker container action
-        uses: ./  # このリポジトリ内のカスタムアクションを呼び出す
+        uses: ./  # このリポジトリ内のカスタムアクションを呼び出す 
