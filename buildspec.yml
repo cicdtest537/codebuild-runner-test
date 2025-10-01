@@ -1,0 +1,7 @@
+# このbuildspec.yamlはCodeBuildで上書きされる。
+version: 0.2
+
+phase:
+  build:
+    commands:
+      - echo "Hello, CodeBuild!"
