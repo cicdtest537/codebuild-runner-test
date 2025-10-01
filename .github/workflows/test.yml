@@ -1,7 +1,7 @@
 name: test container action
 on: [push]
 jobs:
- daily_job:
+ Test-Job:
    runs-on:
     - codebuild-Case175928201000066GitHubActionsRunner-${{ github.run_id }}-${{ github.run_attempt }}
  your_github_secrets_environment
