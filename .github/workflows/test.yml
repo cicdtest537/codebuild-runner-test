@@ -1,10 +1,10 @@
 name: test container action
 on: [push]
 jobs:
- Test-Job:
-   runs-on:
-    - codebuild-Case175928201000066GitHubActionsRunner-${{ github.run_id }}-${{ github.run_attempt }}
+  Test-Job:
+    runs-on:
+      - codebuild-Case175928201000066GitHubActionsRunner-${{ github.run_id }}-${{ github.run_attempt }}
     steps:
       - uses: actions/checkout@v3
       - name: Run local Docker container action
-        uses: ./  # このリポジトリ内のカスタムアクションを呼び出す 
+        uses: ./
