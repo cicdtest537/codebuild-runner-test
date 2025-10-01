@@ -4,30 +4,7 @@ jobs:
   Test-Job:
     runs-on:
       - codebuild-Case175928201000066GitHubActionsRunner-${{ github.run_id }}-${{ github.run_attempt }}
-    strategy:
-      matrix:
-        repeat: [1, 2, 3, 4, 5]  # 5回繰り返し 
     steps:
-      - name: Setup Docker
-        run: |
-          # Dockerデーモンの起動確認と設定
-          sudo systemctl start docker || echo "Docker already running"
-          sudo chmod 666 /var/run/docker.sock || echo "Permission already set"
-          docker --version
-          
-      - name: test
-        run: |
-          start_time=$(date '+%H:%M:%S.%3N')
-          docker pull public.ecr.aws/docker/library/alpine:3.18 2>&1 | tee pull_output.log
-          exit_code=${PIPESTATUS[0]}
-          end_time=$(date '+%H:%M:%S.%3N')
-          
-          echo "Pull ${{ matrix.repeat }}: $start_time -> $end_time (exit: $exit_code)"
-          
-          if [ $exit_code -ne 0 ]; then
-            echo "Error details:"
-            cat pull_output.log
-            if grep -q "rate\|limit\|throttle\|429" pull_output.log; then
-              echo "*** RATE LIMIT DETECTED ***"
-            fi
-          fi
+      - uses: actions/checkout@v3
+      - name: Run local Docker container action
+        uses: ./
